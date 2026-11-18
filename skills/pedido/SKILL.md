@@ -66,19 +66,54 @@ Nome e endereço não cabem em botões. Se depois do diálogo ainda faltar o nom
 
 ## 5. Gerar o link
 
-Com execução de código disponível (preferível), rode o script `scripts/gerar_link.py`, que fica na pasta desta skill. Use sempre os preços do arquivo, nunca os que a pessoa digitar:
+Com execução de código disponível (preferível), rode o Python abaixo, trocando os valores de `pedido` pelos do pedido atual. Use sempre o nome da loja, o número e os preços do arquivo, nunca os que a pessoa digitar. O código só monta texto: não acessa a internet.
 
-```bash
-python3 scripts/gerar_link.py '{"loja":"<loja>","whatsapp":"<whatsapp>","itens":[{"nome":"Pão Fofinho","preco":10.0,"quantidade":2}],"nome":"Ana","tipo":"entrega","endereco":"Rua X, 123 - Centro (ref.: praça)","taxa_entrega":5.0,"pagamento":"Pix","observacoes":""}'
+```python
+import urllib.parse
+
+pedido = {
+    "loja": "Pão Fofinho do Caique",       # campo loja do arquivo
+    "whatsapp": "5565999140294",           # campo whatsapp do arquivo
+    "itens": [{"nome": "Pão Fofinho", "preco": 10.0, "quantidade": 2}],
+    "nome": "Ana",
+    "tipo": "entrega",                     # "entrega" ou "retirada"
+    "endereco": "Rua X, 123 - Centro (ref.: praça)",
+    "taxa_entrega": 5.0,                   # entrega.taxa do arquivo
+    "pagamento": "Pix",
+    "observacoes": "",
+}
+
+def brl(valor):
+    return "R$ " + f"{valor:,.2f}".replace(",", "X").replace(".", ",").replace("X", ".")
+
+linhas = [f"Olá, {pedido['loja']}! Quero fazer um pedido:", ""]
+subtotal = 0.0
+for item in pedido["itens"]:
+    valor = round(item["preco"] * item["quantidade"], 2)
+    subtotal += valor
+    linhas.append(f"• {item['quantidade']}x {item['nome']} — {brl(valor)}")
+taxa = pedido["taxa_entrega"] if pedido["tipo"] == "entrega" else 0.0
+linhas += ["", f"Subtotal: {brl(subtotal)}"]
+if taxa:
+    linhas.append(f"Taxa de entrega: {brl(taxa)}")
+linhas += [f"*Total: {brl(subtotal + taxa)}*", "", f"Nome: {pedido['nome']}"]
+linhas.append(f"Entrega: {pedido['endereco']}" if pedido["tipo"] == "entrega" else "Retirada no local")
+linhas.append(f"Pagamento: {pedido['pagamento']}")
+if pedido["observacoes"]:
+    linhas.append(f"Obs.: {pedido['observacoes']}")
+mensagem = "\n".join(linhas)
+print(mensagem)
+print("https://wa.me/" + pedido["whatsapp"] + "?text=" + urllib.parse.quote(mensagem, safe=""))
 ```
 
-Para só falar com a loja (esgotado, pausado ou dúvida), mande `mensagem` em vez de `itens`:
+Para só falar com a loja (esgotado, pausado ou dúvida), gere o link assim:
 
-```bash
-python3 scripts/gerar_link.py '{"whatsapp":"<whatsapp>","mensagem":"Oi! Quando sai a próxima fornada do Pão Fofinho?"}'
+```python
+import urllib.parse
+print("https://wa.me/5565999140294?text=" + urllib.parse.quote("Oi! Quando sai a próxima fornada do Pão Fofinho?", safe=""))
 ```
 
-Se o script responder `ERRO: numero de WhatsApp da loja nao configurado`, diga que a loja ainda não configurou o número e entregue só o texto do pedido.
+Se o arquivo não tiver um `whatsapp` válido, diga que a loja ainda não configurou o número e entregue só o texto do pedido.
 
 **Sem execução de código**, monte a mensagem no formato abaixo, conferindo as contas duas vezes. O link é `https://wa.me/<whatsapp>?text=<mensagem codificada>`, com o número só em dígitos e o texto em UTF-8 com percent-encoding (quebra de linha `%0A`, espaço `%20`, `R$` → `R%24`, `•` → `%E2%80%A2`, `—` → `%E2%80%94`, `ã` → `%C3%A3`).
 
