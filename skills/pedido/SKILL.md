@@ -16,7 +16,7 @@ description: Faz um pedido de pão no Pão Fofinho do Caique. Confere quantos p�
 
 ## 1. Ler o estoque (em silêncio)
 
-Busque o arquivo com a ferramenta de leitura de páginas web (WebFetch / web_fetch) **toda vez** que um pedido começar. Nunca use números de memória ou de conversas anteriores.
+Busque o arquivo com a ferramenta de leitura de páginas web ou de navegação que você tiver **toda vez** que um pedido começar. Nunca use números de memória ou de conversas anteriores.
 
 1. Primeiro: `https://raw.githubusercontent.com/VHSchuindt/pao-do-caique/main/estoque.json`
 2. Se falhar: `https://github.com/VHSchuindt/pao-do-caique/blob/main/estoque.json`
@@ -35,7 +35,7 @@ Antes de perguntar qualquer coisa, tire da mensagem e da conversa tudo o que já
 
 ## 3. Perguntar só o que falta, tudo de uma vez
 
-**Se você tiver uma ferramenta de perguntas com opções clicáveis** (por exemplo AskUserQuestion ou ask_user_input), faça uma única chamada com as perguntas que faltarem:
+**Se você tiver uma ferramenta que mostra perguntas com botões de escolha**, faça uma única chamada com as perguntas que faltarem:
 
 | Pergunta | Cabeçalho | Opções |
 |---|---|---|

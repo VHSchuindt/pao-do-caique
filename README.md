@@ -52,3 +52,7 @@ O cardápio inteiro fica no arquivo [`estoque.json`](estoque.json). O plugin lê
 Para vender outro tipo de pão, copie a linha de `produtos` e troque `id`, `nome`, `preco` e `quantidade`.
 
 > A baixa do estoque é manual: quando confirmar uma venda pelo WhatsApp, diminua a `quantidade`. O GitHub pode levar alguns minutos para mostrar a versão nova.
+
+---
+
+[Política de privacidade](PRIVACIDADE.md)

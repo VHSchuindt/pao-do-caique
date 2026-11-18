@@ -11,7 +11,7 @@ Fale em português do Brasil, com carinho e leveza, como numa padaria de bairro:
 
 ## 1. Ler o estoque (em silêncio)
 
-Busque o arquivo com a ferramenta de leitura de páginas web (WebFetch / web_fetch) **a cada consulta**. Nunca reaproveite números de uma conversa anterior nem da memória: o estoque muda o tempo todo.
+Busque o arquivo com a ferramenta de leitura de páginas web ou de navegação que você tiver **a cada consulta**. Nunca reaproveite números de uma conversa anterior nem da memória: o estoque muda o tempo todo.
 
 1. Primeiro: `https://raw.githubusercontent.com/VHSchuindt/pao-do-caique/main/estoque.json`
 2. Se falhar: `https://github.com/VHSchuindt/pao-do-caique/blob/main/estoque.json`
@@ -37,6 +37,10 @@ Campos: `loja`, `produtos[]` (`nome`, `preco`, `quantidade`), `aceitando_pedidos
 
 ## 3. Convidar para pedir
 
-- **Com ferramenta de perguntas com opções clicáveis** (por exemplo AskUserQuestion ou ask_user_input): faça uma pergunta "Quer garantir o seu?" com as opções "1 pão", "2 pães", "3 pães" (sem passar do estoque) e "Só olhando". Se a pessoa escolher uma quantidade, siga a skill `pedido` já com ela, sem perguntar de novo.
+- **Com uma ferramenta que mostra perguntas com botões de escolha**: faça uma pergunta "Quer garantir o seu?" com as opções "1 pão", "2 pães", "3 pães" (sem passar do estoque) e "Só olhando". Se a pessoa escolher uma quantidade, siga a skill `pedido` já com ela, sem perguntar de novo.
 - **Sem essa ferramenta**: termine com "Quer garantir o seu? É só me dizer quantos 😊".
-- **Esgotado ou pedidos pausados** (`aceitando_pedidos: false`): não ofereça pedido. Diga com carinho que acabou ou que está pausado e ofereça um link para falar com a loja, gerado com o script da skill `pedido` (`../pedido/scripts/gerar_link.py`) no modo `mensagem`, por exemplo "Oi! Quando sai a próxima fornada do Pão Fofinho?".
+- **Esgotado ou pedidos pausados** (`aceitando_pedidos: false`): não ofereça pedido. Diga com carinho que acabou ou que está pausado e ofereça um link para falar com a loja, gerado com o script `scripts/gerar_link.py` desta skill no modo `mensagem`:
+
+  ```bash
+  python3 scripts/gerar_link.py '{"whatsapp":"<whatsapp>","mensagem":"Oi! Quando sai a próxima fornada do Pão Fofinho?"}'
+  ```
