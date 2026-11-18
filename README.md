@@ -6,6 +6,8 @@
 
 Peça o pão fofinho do Caique conversando com o Claude: ele mostra quantos pães tem hoje, pergunta só o que falta e entrega o pedido pronto no WhatsApp. Você só toca em enviar.
 
+**🛒 Pedir pelo site (qualquer pessoa, sem instalar nada):** https://vhschuindt.github.io/pao-do-caique/
+
 ## Como é pedir
 
 > **Você:** quero 2 pães
