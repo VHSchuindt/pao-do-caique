@@ -1,4 +1,3 @@
-#!/usr/bin/env python3
 """Monta a mensagem do pedido do Pão Fofinho do Caique e o link do WhatsApp.
 
 Uso:
