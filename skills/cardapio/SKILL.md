@@ -39,8 +39,9 @@ Campos: `loja`, `produtos[]` (`nome`, `preco`, `quantidade`), `aceitando_pedidos
 
 - **Com uma ferramenta que mostra perguntas com botões de escolha**: faça uma pergunta "Quer garantir o seu?" com as opções "1 pão", "2 pães", "3 pães" (sem passar do estoque) e "Só olhando". Se a pessoa escolher uma quantidade, siga a skill `pedido` já com ela, sem perguntar de novo.
 - **Sem essa ferramenta**: termine com "Quer garantir o seu? É só me dizer quantos 😊".
-- **Esgotado ou pedidos pausados** (`aceitando_pedidos: false`): não ofereça pedido. Diga com carinho que acabou ou que está pausado e ofereça um link para falar com a loja, gerado com o script `scripts/gerar_link.py` desta skill no modo `mensagem`:
+- **Esgotado ou pedidos pausados** (`aceitando_pedidos: false`): não ofereça pedido. Diga com carinho que acabou ou que está pausado e ofereça um link para falar com a loja, gerado com este Python (troque o número pelo campo `whatsapp` do arquivo):
 
-  ```bash
-  python3 scripts/gerar_link.py '{"whatsapp":"<whatsapp>","mensagem":"Oi! Quando sai a próxima fornada do Pão Fofinho?"}'
+  ```python
+  import urllib.parse
+  print("https://wa.me/5565999140294?text=" + urllib.parse.quote("Oi! Quando sai a próxima fornada do Pão Fofinho?", safe=""))
   ```

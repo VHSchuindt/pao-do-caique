@@ -50,7 +50,7 @@ O pedido só fica confirmado quando a loja responde no WhatsApp.
 ## O que o plugin acessa
 
 - **Lê** o arquivo público `estoque.json` deste repositório (`https://raw.githubusercontent.com/VHSchuindt/pao-do-caique/main/estoque.json`) para saber preço, quantidade, entrega e formas de pagamento.
-- **Roda** o script `scripts/gerar_link.py` das skills (Python, só biblioteca padrão), que monta a mensagem do pedido e o link `https://wa.me/...`. O script não acessa a internet.
+- **Roda**, quando o app permite executar código, um trecho de Python que está no próprio `SKILL.md` e só monta a mensagem do pedido e o link `https://wa.me/...`. Esse código não acessa a internet.
 - **Não envia** dados para nenhum serviço. O pedido só vai para a loja se a pessoa abrir o link do WhatsApp e tocar em enviar.
 - **Não guarda** dados. Veja a [política de privacidade](PRIVACIDADE.md).
 
