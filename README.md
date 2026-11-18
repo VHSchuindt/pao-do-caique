@@ -47,6 +47,13 @@ O pedido só fica confirmado quando a loja responde no WhatsApp.
 /plugin install pao-do-caique@pao-do-caique
 ```
 
+## O que o plugin acessa
+
+- **Lê** o arquivo público `estoque.json` deste repositório (`https://raw.githubusercontent.com/VHSchuindt/pao-do-caique/main/estoque.json`) para saber preço, quantidade, entrega e formas de pagamento.
+- **Roda** o script `scripts/gerar_link.py` das skills (Python, só biblioteca padrão), que monta a mensagem do pedido e o link `https://wa.me/...`. O script não acessa a internet.
+- **Não envia** dados para nenhum serviço. O pedido só vai para a loja se a pessoa abrir o link do WhatsApp e tocar em enviar.
+- **Não guarda** dados. Veja a [política de privacidade](PRIVACIDADE.md).
+
 ## Para a loja: como atualizar o estoque
 
 O cardápio inteiro fica no arquivo [`estoque.json`](estoque.json). O plugin lê esse arquivo a cada conversa, então basta editá-lo aqui no GitHub:
