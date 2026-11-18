@@ -8,6 +8,8 @@ Peça o pão fofinho do Caique conversando com o Claude: ele mostra quantos pãe
 
 **🛒 Pedir pelo site (qualquer pessoa, sem instalar nada):** https://vhschuindt.github.io/pao-do-caique/
 
+**📦 Baixar o plugin (Claude e ChatGPT):** https://github.com/VHSchuindt/pao-do-caique/raw/main/baixar/pao-do-caique.zip
+
 ## Como é pedir
 
 > **Você:** quero 2 pães
@@ -24,6 +26,12 @@ Peça o pão fofinho do Caique conversando com o Claude: ele mostra quantos pãe
 O pedido só fica confirmado quando a loja responde no WhatsApp.
 
 ## Como instalar
+
+**Pelo arquivo (Claude ou ChatGPT)**
+
+1. Baixe o plugin: https://github.com/VHSchuindt/pao-do-caique/raw/main/baixar/pao-do-caique.zip
+2. **No Claude:** Customize > Plugins > Adicionar > **Fazer upload de plugin** e escolha o `.zip`.
+3. **No ChatGPT:** Plugins > Adicionar > **Enviar arquivo compactado do plugin** e escolha o `.zip`.
 
 **No Claude (site, app ou desktop)**
 
