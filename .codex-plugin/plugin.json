@@ -1,0 +1,28 @@
+{
+  "name": "pao-do-caique",
+  "version": "0.2.1",
+  "description": "Fofinho, quentinho e feito com carinho: veja quantos pães o Pão Fofinho do Caique tem hoje e peça em poucos toques, com o pedido pronto no WhatsApp.",
+  "author": {
+    "name": "Pão Fofinho do Caique",
+    "url": "https://github.com/VHSchuindt/pao-do-caique"
+  },
+  "homepage": "https://github.com/VHSchuindt/pao-do-caique",
+  "repository": "https://github.com/VHSchuindt/pao-do-caique",
+  "license": "MIT",
+  "keywords": ["pao", "padaria", "pedido", "cardapio", "estoque", "whatsapp"],
+  "skills": "./skills/",
+  "interface": {
+    "displayName": "Pão Fofinho do Caique",
+    "shortDescription": "Peça pão fofinho no WhatsApp",
+    "longDescription": "Veja quantos pães o Pão Fofinho do Caique tem hoje, o preço e as formas de entrega e pagamento. Diga quantos quer e receba o pedido pronto num link do WhatsApp: é só tocar em enviar. O pedido fica confirmado quando a loja responde.",
+    "developerName": "Pão Fofinho do Caique",
+    "category": "Lifestyle",
+    "capabilities": [],
+    "websiteURL": "https://github.com/VHSchuindt/pao-do-caique",
+    "privacyPolicyURL": "https://github.com/VHSchuindt/pao-do-caique/blob/main/PRIVACIDADE.md",
+    "defaultPrompt": ["Tem pão hoje?", "Quero 2 pães pra retirar", "Quero pedir pão com entrega"],
+    "brandColor": "#E5793B",
+    "composerIcon": "./assets/logo.png",
+    "logo": "./assets/logo.png"
+  }
+}
