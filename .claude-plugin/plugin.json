@@ -1,0 +1,13 @@
+{
+  "name": "pao-do-caique",
+  "displayName": "Pão Fofinho do Caique",
+  "version": "0.2.0",
+  "description": "Fofinho, quentinho e feito com carinho: veja quantos pães tem hoje e peça em poucos toques, com o pedido pronto no WhatsApp.",
+  "author": {
+    "name": "Pão Fofinho do Caique"
+  },
+  "repository": "https://github.com/VHSchuindt/pao-do-caique",
+  "license": "MIT",
+  "keywords": ["pao", "padaria", "pedido", "cardapio", "estoque", "whatsapp"],
+  "icon": "./assets/logo.png"
+}

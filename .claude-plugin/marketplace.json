@@ -1,0 +1,14 @@
+{
+  "name": "pao-do-caique",
+  "owner": {
+    "name": "Pão Fofinho do Caique"
+  },
+  "description": "Pão fofinho, quentinho e feito com carinho: cardápio, estoque e pedidos pelo WhatsApp.",
+  "plugins": [
+    {
+      "name": "pao-do-caique",
+      "source": "./",
+      "description": "Veja quantos pães tem hoje e peça em poucos toques, com o pedido pronto no WhatsApp."
+    }
+  ]
+}

@@ -1,0 +1,21 @@
+{
+  "_ajuda": "Edite este arquivo para atualizar o cardapio. Mude 'quantidade' sempre que vender ou fizer mais paes. Use ponto nos precos (10.00). Quantidade 0 = esgotado.",
+  "loja": "Pão Fofinho do Caique",
+  "whatsapp": "5565999140294",
+  "atualizado_em": "2026-11-18 13:30",
+  "aceitando_pedidos": true,
+  "aviso": "",
+  "entrega": {
+    "disponivel": true,
+    "taxa": 5.00,
+    "observacao": "Região e horário combinados pelo WhatsApp"
+  },
+  "retirada": {
+    "disponivel": true,
+    "observacao": "Endereço de retirada enviado pelo WhatsApp"
+  },
+  "pagamento": ["Pix", "Dinheiro", "Cartão na entrega"],
+  "produtos": [
+    { "id": "pao-fofinho", "nome": "Pão Fofinho", "preco": 10.00, "quantidade": 10 }
+  ]
+}
